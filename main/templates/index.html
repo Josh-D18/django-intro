@@ -1,37 +1,131 @@
-{% extends 'base.html' %}
-{% block content %}
-<div class='container mt-5'>
-  <form method='POST'>
-    <div class='text-center'>
-      <h1>SingleKey</h1>
-    </div>
-    <div class='row mt-3'>
-      <div class='col'>
-        <label>Name</label><br>
-        <input name='name'>
-      </div>
-      <div class='col'>
-        <label>Email</label><br>
-        <input name='email'>
-      </div>
-    </div>
-    <br>
-    <br>
-    {% csrf_token %}
-    <div class='text-center'>
-      <button type='supmit' class='btn btn-primary'>Submit</button>
-    </div>
-  </form>
-  {% if results %}
-  <div class='w-100 text-center mt-5'>
-    <h3>Previous submissions</h3>
-      {% for i in results %}
-        <div class='text-left mb-3 p-4 card'>
-          <b>{{ i.name }}</b><br>
-          <b>{{ i.email }}</b>
+{% extends 'base.html' %} {% block content %} {% load staticfiles %}
+<div class="">
+  <header class="header">
+    <img class="headerImg" src={% static "assets/singlekey_logo.png" %}>
+    <button class="btn btn-outline-primary headerButton">Log in</button>
+  </header>
+  <section>
+    <article class="hero">
+      <h2 class="heroTitle">Good Morning, Alex</h2>
+      <p class="heroText">
+        Here's a quick summary of your activity so far. If you have any
+        questions about your report feel free to book a call with us
+      </p>
+      <button class="btn btn-outline-light heroButton">Book a call</button>
+    </article>
+  </section>
+  <article class="largeScreenContainer">
+    <article>
+      <form method="POST">
+        <div class="">
+          <h2 class="title">Submit Information</h2>
         </div>
-      {% endfor %}
-    {% endif %}
-  </div>
+        <article class="form">
+          <div class="row mt-3 formContent">
+            <div class="col">
+              <label><b>Applicant name</b></label
+              ><br />
+              <input
+                type="text"
+                name="name"
+                class="form-control form-control-lg formInput"
+                placeholder="Applicant name"
+              /><br />
+              <label><b>Email address</b></label
+              ><br />
+              <input
+                type="email"
+                class="form-control form-control-lg formInput"
+                placeholder="Email address"
+              />
+            </div>
+          </div>
+          {% csrf_token %}
+          <div>
+            <button type="submit" class="btn btn-primary formbtn">
+              Submit
+            </button>
+          </div>
+          <span class="underline"></span>
+        </article>
+      </form>
+      {% if results %}
+      <div class="w-100 text-left mt-1 submissionContainer">
+        <h3 class="title submissionTitle text-left">Submissions</h3>
+        {% for i in results %}
+        <div class="text-left mb-3 p-4 card submissionContent">
+          <article class="submissionIconContent">
+            <img class="submissionImg" src={% static "assets/circle_tick.png"%}>
+            <article>
+              <b class="submissionName">{{ i.name }}</b><br />
+              <b class="submissionEmail">{{ i.email }}</b>
+            </article>
+          </article>
+          <article>
+            <button class="submissionbtn">Submitted</button>
+          </article>
+        </div>
+        {% endfor %}
+
+        <!-- Table for bigger screen -->
+        <table class="table tablebg">
+          <thead>
+            <tr>
+              <th scope="col">Applicant</th>
+              <th scope="col">Email</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for i in results %}
+            <tr>
+              <td>{{ i.name }}</td>
+              <td>{{ i.email }}</td>
+              <td>Submitted</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% endif %}
+      </div>
+      <p class="underlineSubmission"></p>
+    </article>
+
+    <!--side content for larger screens -->
+    <article>
+      <article class="heroAside">
+        <h2 class="heroAsideTitle">Good Morning, Alex</h2>
+        <p class="heroAsideText">
+          Here's a quick summary of your activity so far. If you have any
+          questions about your report feel free to book a call with us
+        </p>
+        <button class="btn btn-outline-light heroAsideButton">
+          Book a call
+        </button>
+      </article>
+      <article class="text-left guaranteeAsideContainer">
+        <h2 class="guaranteeTitle">Rent guarantee</h2>
+        <p>
+          Never miss a rent payment! Learn how to Rent Guarantee Program
+          protects your property and rental income so you can take the risk out
+          of renting.
+        </p>
+        <button class="btn btn-outline-primary guaranteeBtn">Start now</button>
+      </article>
+    </article>
+  </article>
+  <article class="text-left guaranteeContainer">
+    <h2 class="guaranteeTitle">Rent guarantee</h2>
+    <p>
+      Never miss a rent payment! Learn how to Rent Guarantee Program protects
+      your property and rental income so you can take the risk out of renting.
+    </p>
+    <button class="btn btn-outline-primary guaranteeBtn">Start now</button>
+  </article>
+  <footer>
+    <p class="text-left footerText">
+      &copy; All rights reserved SingleKey<br />
+    </p>
+  </footer>
 </div>
 {% endblock %}
