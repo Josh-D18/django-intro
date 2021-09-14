@@ -41,16 +41,16 @@
 
   button.heroButton {
     width: 7rem;
-    color: white;
+    color: #fff;
   }
 
   .heroTitle {
     font-size: 1.7rem;
-    color: white;
+    color: #fff;
   }
 
   .heroText {
-    color: white;
+    color: #fff;
     text-align: justify;
   }
 
@@ -71,7 +71,7 @@
   button.formbtn {
     margin-top: 1rem;
     width: 31%;
-    color: white;
+    color: #fff;
     background-color: #361060;
   }
 
@@ -159,7 +159,7 @@
 
   .footerText {
     margin-top: 1rem;
-    color: white;
+    color: #fff;
     padding-left: 1rem;
   }
 
@@ -175,7 +175,7 @@
 /* Landscape phones and portrait tablets */
 @media (min-width: 767px) {
   .header {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 7%), 0 6px 20px 0 rgb(0 0 0 / 0%);
   }
   .submissionContainer {
     padding: 2rem;
@@ -190,6 +190,12 @@
   }
   .tablebg {
     display: table;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 0%), 0 6px 20px 0 rgb(0 0 0 / 11%);
+    border-top: 2px solid white;
+  }
+
+  button.formButton {
+    width: 16%;
   }
 
   /* Aside Content */
@@ -199,6 +205,8 @@
   }
   .sideOne {
     width: 81%;
+    padding: 1rem;
+    padding-left: 5rem;
   }
   .sideTwo {
     width: 45%;
@@ -212,20 +220,28 @@
   }
 
   .heroAsideButton {
-    margin-top: 1rem;
-    width: 31%;
-    color: white;
+    margin-top: 0.3rem;
+    color: #fff;
     background-color: #361060;
-    width: 8rem;
-    padding: 1rem;
+    width: 62%;
+    height: 2.5rem;
+    border-radius: 5%;
+  }
+  #asideButton {
+    border: 0.5px solid #fff;
+    background-color: #361060;
+  }
+
+  #asideButton:hover {
+    background-color: white;
   }
 
   .heroAsideText {
-    color: white;
+    color: #fff;
     font-size: 0.9rem;
   }
   .heroAsideTitle {
-    color: white;
+    color: #fff;
     font-size: 1.2rem;
     font-weight: bold;
   }
@@ -264,6 +280,15 @@
     align-items: center;
     width: 100%;
   }
+
+  .sideTwo {
+    /* width: 0%;
+    padding-left: 1rem; */
+  }
+
+  button.formButton {
+    width: 10%;
+  }
 }
 
 /* Landscape tablets and medium desktops */
@@ -278,11 +303,19 @@
   .heroAside,
   .guaranteeAsideContainer {
     display: block;
+    border-radius: 0.5rem;
   }
   .largeScreenContainer {
     display: flex;
     align-items: center;
     width: 100%;
+  }
+  .sideTwo {
+    width: 40%;
+    padding-left: 1rem;
+  }
+  button.formButton {
+    width: 10%;
   }
 }
 
@@ -298,10 +331,18 @@
   .heroAside,
   .guaranteeAsideContainer {
     display: block;
+    border-radius: 0.5rem;
   }
   .largeScreenContainer {
     display: flex;
     align-items: center;
     width: 100%;
+  }
+
+  .sideTwo {
+    width: 23%;
+  }
+  button.formButton {
+    width: 10%;
   }
 }

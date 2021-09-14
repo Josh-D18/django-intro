@@ -79,7 +79,9 @@
           <tbody>
             {% for i in results %}
             <tr>
-              <td>{{ i.name }}</td>
+              <td>
+                <img src={% static "assets/circle_tick.png" %}> {{ i.name }}
+              </td>
               <td>{{ i.email }}</td>
               <td>Submitted</td>
             </tr>
@@ -99,7 +101,9 @@
           Here's a quick summary of your activity so far. If you have any
           questions about your report feel free to book a call with us
         </p>
-        <button class="btn btn-secondary heroAsideButton">Book a call</button>
+        <button class="btn-secondary btn-sm heroAsideButton" id="asideButton">
+          Book a call
+        </button>
       </article>
       <article class="text-left guaranteeAsideContainer">
         <h2 class="guaranteeAsideTitle">Rent guarantee</h2>
@@ -108,7 +112,7 @@
           protects your property and rental income so you can take the risk out
           of renting.
         </p>
-        <button class="btn btn-outline-secondary heroAsideButton">
+        <button class="btn-outline-secondary heroAsideButton btn-sm">
           Start now
         </button>
       </article>
