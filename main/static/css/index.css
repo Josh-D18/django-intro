@@ -152,6 +152,9 @@
     color: #361060;
     border-color: #361060;
   }
+  button.guaranteeBtn:hover {
+    background-color: #292468;
+  }
 
   /* Footer */
   footer {
